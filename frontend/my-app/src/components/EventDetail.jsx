@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 export default function EventDetail({ event, onBack }) {
   const [why, setWhy] = useState("");
   const [messages, setMessages] = useState([]);
+  const API_BASE_URL = import.meta.env.VITE_APP_URL || "http://localhost:5000";
 
   useEffect(() => {
     if (!event?._id) return;
 
     // Fetch reason why
-    fetch(`http://localhost:5000/api/why/${event._id}`)
+    fetch(`${API_BASE_URL}/api/why/${event._id}`)
       .then(res => res.json())
       .then(data => {
         setWhy(data.summary || "No explanation found.");
@@ -16,7 +17,7 @@ export default function EventDetail({ event, onBack }) {
       .catch(err => console.error(err));
 
     // Fetch related messages
-    fetch(`http://localhost:5000/api/messages/${event._id}`)
+    fetch(`${API_BASE_URL}/api/messages/${event._id}`)
       .then(res => res.json())
       .then(data => setMessages(data))
       .catch(err => console.error(err));

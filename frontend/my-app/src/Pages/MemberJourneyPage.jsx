@@ -7,14 +7,15 @@ export default function MemberJourneyPage({ memberId }) {
   const [events, setEvents] = useState([]);
   const [persona, setPersona] = useState(null);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const API_BASE_URL = import.meta.env.VITE_APP_URL || "http://localhost:5000";
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/events/${memberId}`)
+    fetch(`${API_BASE_URL}/api/events/${memberId}`)
       .then(res => res.json())
       .then(data => setEvents(data))
       .catch(err => console.error(err));
 
-    fetch(`http://localhost:5000/api/persona/${memberId}`)
+    fetch(`${API_BASE_URL}/api/persona/${memberId}`)
       .then(res => res.json())
       .then(data => setPersona(data))
       .catch(err => console.error(err));
