@@ -39,7 +39,7 @@ router.get("/:memberId", async (req, res) => {
       const sender = msg.sender?.trim().toLowerCase();
       console.log("Processing sender:", sender);
 
-      switch (sender) {
+      switch (sender) {̥
         case "dr. warren (medical strategist)":
           medicalHours += 5 / 60;
           break;
