@@ -1,6 +1,7 @@
 # Project: GPT Check
 
 A full-stack application built with **Node.js (Express + MongoDB)** on the backend and **React (Vite)** on the frontend.
+## Deployed at - https://elyx-hackathon.vercel.app/
 
 ---
 
