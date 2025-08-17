@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export default function EventDetail({ event, onBack }) {
   const [why, setWhy] = useState("");
   const [messages, setMessages] = useState([]);
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API_BASE_URL = import.meta.env.VITE_APP_URL || "http://localhost:5000";
 
   useEffect(() => {
     if (!event?._id) return;

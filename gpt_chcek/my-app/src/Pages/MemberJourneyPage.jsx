@@ -7,8 +7,8 @@ export default function MemberJourneyPage({ memberId }) {
   const [events, setEvents] = useState([]);
   const [persona, setPersona] = useState(null);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-  
+  const API_BASE_URL = import.meta.env.VITE_APP_URL || "http://localhost:5000";
+
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/events/${memberId}`)
       .then(res => res.json())
